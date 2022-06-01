@@ -1,22 +1,23 @@
-SinglyLinkedList = __import__('singly_linked_list').SinglyLinkedList
-Node = __import__('single_linked_list').Node
+from singly_linked_list import SinglyLinkedList
+from singly_linked_list import Node
 
 
-class SinglyLinkedList_2_3(SinglyLinkedList):
+class SinglyLinkedList_3(SinglyLinkedList):
 
     def del_middle(self, mid_node: Node):
         """
         Deletes a node in the middle of a linked list.
         O(1) time complexity.
         """
+        # if mid_node or mid_node.next:
+            # return 
         next_node = mid_node.next
         mid_node.value = next_node.value
         mid_node.next = next_node.next
-        del(next_node)
 
 
-if __name__ == 'main':
-    sll = SinglyLinkedList_2_3()
+if __name__ == '__main__':
+    sll = SinglyLinkedList_3()
     sll.add_to_front(1)
     sll.add_to_front(2)
     node = sll.add_to_front(4)
