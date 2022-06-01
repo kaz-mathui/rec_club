@@ -1,7 +1,6 @@
-SinglyLinkedList = __import__('singly_linked_list').SinglyLinkedList
+from singly_linked_list import SinglyLinkedList
 
-
-class SinglyLinkedList_2_4(SinglyLinkedList):
+class SinglyLinkedList_4(SinglyLinkedList):
 
     def partition(self, number: int):
         """
@@ -14,18 +13,22 @@ class SinglyLinkedList_2_4(SinglyLinkedList):
         while curr:
             next_node = curr.next
             if curr.value < number:
+                # 先頭に追加
                 curr.next = head
                 head = curr
             else:
+                # 後ろに挿入していくイメージ
+                # 今の末尾の次に追加する
                 tail.next = curr
+                # 末尾をcurrに変える
                 tail = curr
             curr = next_node
         tail.next = None
         self.head = head
 
 
-if __name__ == 'main':
-    sll = SinglyLinkedList_2_4()
+if __name__ == '__main__':
+    sll = SinglyLinkedList_4()
     arr = [10, 30, 11, 31, 12, 33, 13]
     for i in arr:
         sll.add_to_front(i)
