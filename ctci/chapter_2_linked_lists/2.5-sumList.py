@@ -1,8 +1,7 @@
-SinglyLinkedList = __import__('singly_linked_list').SinglyLinkedList
-Node = __import__('singly_linked_list').Node
+from singly_linked_list import SinglyLinkedList
+from singly_linked_list import Node
 
-
-class SinglyLinkedList_2_5(SinglyLinkedList):
+class SinglyLinkedList_5(SinglyLinkedList):
 
     @staticmethod
     def sum_list(first_node: Node, second_node: Node, carry: int = 0) -> Node:
@@ -24,39 +23,40 @@ class SinglyLinkedList_2_5(SinglyLinkedList):
         s = None if not second_node or not second_node.next \
             else second_node.next
         v = 1 if value >= 10 else 0
-        new_node.next = SinglyLinkedList_2_5.sum_list(f, s, v)
+        # ↓Staticじゃなくてもできる？
+        new_node.next = SinglyLinkedList_5.sum_list(f, s, v)
         return new_node
 
 
-if __name__ == 'main':
-    sll = SinglyLinkedList_2_5()
+if __name__ == '__main__':
+    sll = SinglyLinkedList_5()
     sll.add_to_front(6)
     sll.add_to_front(1)
     sll.add_to_front(7)
-    sll.print_linked_list()  # 1 -> 7 -> 6
+    sll.print_linked_list()  # 7 -> 1 -> 6
 
-    sll2 = SinglyLinkedList_2_5()
+    sll2 = SinglyLinkedList_5()
     sll2.add_to_front(2)
     sll2.add_to_front(9)
     sll2.add_to_front(5)
     sll2.print_linked_list()  # 5 -> 9 -> 2
 
-    new_head = SinglyLinkedList_2_5.sum_list(sll.head, sll2.head)
-    sll3 = SinglyLinkedList_2_5()
+    new_head = SinglyLinkedList_5.sum_list(sll.head, sll2.head)
+    sll3 = SinglyLinkedList_5()
     sll3.head = new_head
     sll3.print_linked_list()  # 2 -> 1 -> 9
 
-    sll4 = SinglyLinkedList_2_5()
+    sll4 = SinglyLinkedList_5()
     sll4.add_to_front(9)
     sll4.add_to_front(9)
     sll4.add_to_front(9)
     sll4.print_linked_list()  # 9 -> 9 -> 9
 
-    sll5 = SinglyLinkedList_2_5()
+    sll5 = SinglyLinkedList_5()
     sll5.add_to_front(1)
     sll5.print_linked_list()  # 1
 
-    new_head = SinglyLinkedList_2_5.sum_list(sll4.head, sll5.head)
-    sll6 = SinglyLinkedList_2_5()
+    new_head = SinglyLinkedList_5.sum_list(sll4.head, sll5.head)
+    sll6 = SinglyLinkedList_5()
     sll6.head = new_head
     sll6.print_linked_list()  # 0 -> 0 -> 0 -> 1
