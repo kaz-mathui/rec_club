@@ -11,10 +11,7 @@ class Node:
         """
         Prints node.
         """
-        curr = self
-        while curr:
-            print(curr.value, end="-> " if curr.next else "\n")
-            curr = curr.next
+        print("value:",self.value)
 
 
 class SinglyLinkedList:
