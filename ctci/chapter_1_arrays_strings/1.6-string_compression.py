@@ -18,10 +18,10 @@ def string_compression(string: str) -> str:
             count = 1
         else:
             count += 1
-    return ''.join(_list)
+    return ''.join(_list) if len(''.join(_list)) < len(string) else string
 
 
-if __name__ == 'main':
+if __name__ == '__main__':
     print(string_compression("aaabbc"))  # a3b2c1
     print(string_compression("abc"))  # a1b1c1
     print(string_compression("lliiiinnnuux"))  # l2i4n3u2x1

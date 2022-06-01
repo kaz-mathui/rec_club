@@ -44,9 +44,10 @@ def check_permutation(str1: str, str2: str) -> bool:
     return True
 
 
-if __name__ == 'main':
+if __name__ == '__main__':
     print(check_permutation('dog', 'god'))  # true
+    print(check_permutation('dog ', 'god'))  # false
     print(check_permutation('dog', 'God'))  # false
     print(check_permutation('dog', 'good'))  # false
     print(check_permutation('mmmmm', 'mmmmm'))  # true
-    print(check_permutation('mmmmm', 'mmmmn'))  # true
+    print(check_permutation('mmmmm', 'mmmmn'))  # false

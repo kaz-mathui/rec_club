@@ -21,7 +21,7 @@ def is_pali_permutation(string: str) -> bool:
     return odds <= 1
 
 
-if __name__ == 'main':
+if __name__ == '__main__':
     print(is_pali_permutation("tact coa"))  # true
     print(is_pali_permutation("tact coao"))  # true
     print(is_pali_permutation("tact ccoa"))  # false

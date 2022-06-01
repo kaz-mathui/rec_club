@@ -50,7 +50,7 @@ def is_one_edit_away(str1: str, str2: str) -> bool:
     return False
 
 
-if __name__ == 'main':
+if __name__ == '__main__':
     print(is_one_edit_away('beal', 'bal'))  # True
     print(is_one_edit_away('val', 'bal'))  # True
     print(is_one_edit_away('val', 'bale'))  # False

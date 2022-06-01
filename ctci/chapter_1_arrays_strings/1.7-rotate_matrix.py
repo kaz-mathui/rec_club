@@ -36,7 +36,7 @@ def print_matrix(matrix: List[List[int]]):
     print('====================')
 
 
-if __name__ == "main":
+if __name__ == "__main__":
     matrix1 = [[0, 1], [2, 3]]
     matrix2 = [[0, 1, 2], [3, 4, 5], [6, 7, 8]]
     matrix3 = [[0, 1, 2, 3], [4, 5, 6, 7], [8, 9, 10, 11], [12, 13, 14, 15]]

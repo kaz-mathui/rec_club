@@ -11,7 +11,7 @@ def is_rotation(str1: str, str2: str) -> bool:
     return False
 
 
-if __name__ == "main":
+if __name__ == "__main__":
     print(is_rotation("erbottlewat", "waterbottle"))  # true
     print(is_rotation("erbottlewa", "waterbottle"))  # false
     print(is_rotation("bot", "tbo"))  # true

@@ -8,7 +8,7 @@ def urlify(string: str) -> str:
     return string.strip().replace(' ', '%20')
 
 
-if __name__ == 'main':
+if __name__ == '__main__':
     print(urlify("Mr John Smith    "))
     # Mr%20John%20Smith
     print(urlify("Say hello to my little friend          "))

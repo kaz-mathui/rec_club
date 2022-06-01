@@ -13,7 +13,7 @@ def is_unique(string: str) -> bool:
     return True
 
 
-if __name__ == 'main':
+if __name__ == '__main__':
     print(is_unique("abcdef"))  # true
     print(is_unique("abcdea"))  # false
     print(is_unique("aa"))  # false

@@ -45,7 +45,7 @@ def print_matrix(matrix: List[List[int]]):
     print('====================')
 
 
-if __name__ == "main":
+if __name__ == "__main__":
     matrix1 = [
         [2, 2, 2, 2, 2],
         [2, 2, 0, 2, 2],
