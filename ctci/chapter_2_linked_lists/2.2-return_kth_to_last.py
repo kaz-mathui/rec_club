@@ -1,8 +1,7 @@
-SinglyLinkedList = __import__('singly_linked_list').SinglyLinkedList
-Node = __import__('singly_linked_list').Node
+from singly_linked_list import SinglyLinkedList
+from singly_linked_list import Node
 
-
-class SinglyLinkedList_2_2(SinglyLinkedList):
+class SinglyLinkedList_2_1(SinglyLinkedList):
 
     def kth_elem_from_last(self, k: int) -> Node:
         """
@@ -20,8 +19,25 @@ class SinglyLinkedList_2_2(SinglyLinkedList):
             kth = kth.next
         return kth
 
+class SinglyLinkedList_2_2(SinglyLinkedList):
 
-if __name__ == 'main':
+    def kth_elem_from_last(self, k: int) -> Node:
+        """
+        Returns the kth element from last node.
+        O(n) time complexity.
+        """
+        if k < 0 or k > self.length:
+            raise IndexError
+        curr = self.head
+        k = self.length - k
+        while k != 0:
+            curr = curr.next
+            k -= 1
+        return curr
+
+
+if __name__ == '__main__':
+    # sll = SinglyLinkedList_2_1()
     sll = SinglyLinkedList_2_2()
     arr = [1, 2, 4, 8, 16, 32]
     for i in arr:
