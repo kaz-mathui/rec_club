@@ -6,6 +6,15 @@ class Node:
         """
         self.value = value
         self.next = None
+    
+    def print_node(self):
+        """
+        Prints node.
+        """
+        curr = self
+        while curr:
+            print(curr.value, end="-> " if curr.next else "\n")
+            curr = curr.next
 
 
 class SinglyLinkedList:

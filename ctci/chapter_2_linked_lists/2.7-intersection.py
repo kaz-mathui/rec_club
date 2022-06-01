@@ -1,10 +1,9 @@
-SinglyLinkedList = __import__('singly_linked_list').SinglyLinkedList
-Node = __import__('single_linked_list').Node
+from singly_linked_list import SinglyLinkedList
+from singly_linked_list import Node
 
+class SinglyLinkedList_7(SinglyLinkedList):
 
-class SinglyLinkedList_2_7(SinglyLinkedList):
-
-    def intersection(self, other_list: SinglyLinkedList_2_7) -> Node:
+    def intersection(self, other_list: SinglyLinkedList) -> Node:
         """
         Finds if two linked lists intersect and returns the node where they
         first meet.
@@ -27,11 +26,11 @@ class SinglyLinkedList_2_7(SinglyLinkedList):
                 return short
             long = long.next
             short = short.next
-        return None
+        return Node(None)
 
 
-if __name__ == 'main':
-    sll = SinglyLinkedList_2_7()
+if __name__ == '__main__':
+    sll = SinglyLinkedList_7()
     sll.add_to_front(1)
     sll.add_to_front(2)
     sll.add_to_front(4)
@@ -40,14 +39,14 @@ if __name__ == 'main':
     sll.add_to_front(32)
     sll.print_linked_list()  # 1-> 2-> 4-> 8-> 16-> 32
 
-    sll2 = SinglyLinkedList_2_7()
+    sll2 = SinglyLinkedList_7()
     n5 = sll2.add_to_front(5)
     n5.next = n8
-    print(sll.intersection(sll2))  # True
+    sll.intersection(sll2).print_node()
 
-    sll3 = SinglyLinkedList_2_7()
+    sll3 = SinglyLinkedList_7()
     arr = [100, 50, 25, 8, 16, 32]
     for i in arr:
         sll3.add_to_front(i)
     sll3.print_linked_list()  # 32-> 16-> 8-> 25-> 50-> 100
-    print(sll.intersection(sll3))  # False
+    sll.intersection(sll3).print_node()
