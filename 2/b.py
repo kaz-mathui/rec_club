@@ -7,7 +7,6 @@ for i in range(M):
     todai[t1 - 1].append(t2 - 1)
     todai[t2 - 1].append(t1 - 1)
 ans = 0
-
 for i in range(N):
     if len(todai[i]) == 0:
         ans += 1
